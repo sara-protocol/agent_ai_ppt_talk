@@ -323,8 +323,8 @@ setTimeout(()=>{
 <script>
 // ====== USDT Pricing Override v3 ======
 const PRICING_USDT = {
-  zh: { monthly: '5 USDT / 月', lifetime: '29 USDT / 终身', monthly_num: 5, lifetime_num: 29, symbol: 'USDT' },
-  en: { monthly: '5 USDT / month', lifetime: '29 USDT / lifetime', monthly_num: 5, lifetime_num: 29, symbol: 'USDT' }
+  zh: { monthly: '10 USDT / 月', lifetime: '39 USDT / 终身', monthly_num: 10, lifetime_num: 39, symbol: 'USDT' },
+  en: { monthly: '10 USDT / month', lifetime: '39 USDT / lifetime', monthly_num: 10, lifetime_num: 39, symbol: 'USDT' }
 };
 function updatePricingUSDT(){
   const l = localStorage.getItem('ppt_lang')||'zh';
@@ -347,12 +347,12 @@ function updatePricingUSDT(){
     box.innerHTML = `
       <div style="background:#0a0a0f;border:1px solid #2a2a30;border-radius:12px;padding:10px;text-align:center">
         <div style="font-size:11px;color:#9a9aa0">${l==='zh'?'月度会员':'Monthly'}</div>
-        <div style="font-size:16px;font-weight:800;color:#00d4ff;margin:4px 0">5 USDT</div>
+        <div style="font-size:16px;font-weight:800;color:#00d4ff;margin:4px 0">10 USDT</div>
         <div style="font-size:10px;color:#666">${l==='zh'?'全站解锁 + 视频生成':'Full access + Video'}</div>
       </div>
       <div style="background:#fff;color:#000;border-radius:12px;padding:10px;text-align:center;font-weight:700">
         <div style="font-size:11px;color:#555">${l==='zh'?'终身会员 推荐':'Lifetime Best'}</div>
-        <div style="font-size:16px;font-weight:900;margin:4px 0">29 USDT</div>
+        <div style="font-size:16px;font-weight:900;margin:4px 0">39 USDT</div>
         <div style="font-size:10px;color:#333">${l==='zh'?'一次付费 永久更新':'One-time Forever'}</div>
       </div>`;
     const qr = payCard.querySelector('.qr-wrap');
@@ -361,8 +361,8 @@ function updatePricingUSDT(){
   // Update any Pro button text
   document.querySelectorAll('button').forEach(btn=>{
     if(/Pro.*打包|👑/.test(btn.textContent) || /Pro.*Download/i.test(btn.textContent)){
-      if(l==='zh') btn.title='5 USDT/月 或 29 USDT终身';
-      else btn.title='5 USDT/month or 29 USDT lifetime';
+      if(l==='zh') btn.title='10 USDT/月 或 39 USDT终身';
+      else btn.title='10 USDT/month or 39 USDT lifetime';
     }
   });
 }
@@ -377,7 +377,7 @@ localStorage.setItem('pricing_currency','USDT');
 /* Pricing tag in top bar */
 #usdt-price-tag{position:fixed;top:50px;right:12px;z-index:9999;background:#00d4ff;color:#000;font-weight:800;font-size:11px;padding:4px 10px;border-radius:99px;letter-spacing:0.5px}
 </style>
-<div id="usdt-price-tag">USDT Pricing: 5 / 29 USDT</div>
+<div id="usdt-price-tag">USDT Pricing: 10 / 39 USDT</div>
 
 </body>
 </html>
