@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.env
+.venv
+venv/
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+# Slides previews
+slides/*.preview.png
+*.preview.png
+# Demo deps
+web-mcp-demo/node_modules/
+web-mcp-demo/dist/
+# Logs
+*.log
+npm-debug.log*
+# Secrets
+.ghp_*
+*.pem
+*.key

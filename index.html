@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent AI: 從李飛飛80頁綜述到2026實戰指南 | SARA Protocol</title>
+    <meta name="description" content="基於 arXiv:2401.03568 + MCP + A2A 2026實戰的開源課件，13頁可交互HTML幻燈片、5篇精讀、逐字稿、Web-MCP Demo">
+    <meta property="og:title" content="Agent AI: 從李飛飛80頁綜述到2026實戰指南">
+    <meta property="og:description" content="開源課件：13頁HTML幻燈片 + 5篇精讀 + Web-MCP Demo，基於 arXiv:2401.03568">
+    <meta property="og:url" content="https://sara-protocol.github.io/agent_ai_ppt_talk/">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0a0a0b; --card: #161618; --border: #26262a; --text: #e8e8ea; --muted: #9a9aa0; --accent: #7c3aed; --accent2: #06b6d4; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Inter', 'Noto Sans TC', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height:1.6; overflow-x:hidden; }
+        a { color: inherit; text-decoration:none; }
+        .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:40px 20px; text-align:center; position:relative; }
+        .hero::before { content:''; position:absolute; inset:0; background: radial-gradient(600px at 30% 20%, rgba(124,58,237,0.25), transparent 60%), radial-gradient(800px at 80% 80%, rgba(6,182,214,0.2), transparent 60%); pointer-events:none; }
+        .badge-row { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:24px; position:relative; z-index:1; }
+        .badge-row img { height:20px; }
+        h1 { font-size: clamp(28px, 5vw, 56px); font-weight:800; line-height:1.1; letter-spacing:-0.02em; margin-bottom:16px; position:relative; z-index:1; }
+        h1 span { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .subtitle { font-size: clamp(14px, 2vw, 18px); color: var(--muted); max-width:720px; margin:0 auto 32px; position:relative; z-index:1; }
+        .cta-row { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; position:relative; z-index:1; }
+        .btn { padding:12px 24px; border-radius:12px; font-weight:600; font-size:15px; transition: all 0.2s; display:inline-flex; align-items:center; gap:8px; }
+        .btn-primary { background: var(--text); color: var(--bg); }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,255,255,0.15); }
+        .btn-secondary { background: var(--card); border:1px solid var(--border); color: var(--text); }
+        .btn-secondary:hover { border-color: var(--text); }
+        .grid { max-width:1100px; margin:0 auto; padding:60px 20px; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; }
+        .card { background: var(--card); border:1px solid var(--border); border-radius:16px; padding:24px; transition: border-color 0.2s; }
+        .card:hover { border-color: #3a3a40; }
+        .card h3 { font-size:16px; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+        .card p { font-size:14px; color: var(--muted); }
+        .card .num { font-size:12px; color: var(--accent); font-weight:700; letter-spacing:0.05em; }
+        .slides-nav { max-width:1100px; margin:0 auto; padding:0 20px 80px; }
+        .slides-nav h2 { font-size:20px; margin-bottom:16px; }
+        .slide-list { display:flex; flex-wrap:wrap; gap:8px; }
+        .slide-link { padding:8px 14px; background: var(--card); border:1px solid var(--border); border-radius:999px; font-size:13px; color: var(--muted); transition: all 0.2s; }
+        .slide-link:hover { color: var(--text); border-color: var(--text); transform: translateY(-1px); }
+        footer { text-align:center; padding:40px 20px; color: var(--muted); font-size:13px; border-top:1px solid var(--border); }
+        @media (max-width:600px){ .cta-row{flex-direction:column; width:100%; max-width:320px;} .btn{justify-content:center; width:100%;} }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="badge-row">
+            <a href="https://arxiv.org/abs/2401.03568"><img src="https://img.shields.io/badge/Paper-arXiv%3A2401.03568-b31b1b.svg" alt="Paper"></a>
+            <a href="https://modelcontextprotocol.io"><img src="https://img.shields.io/badge/Protocol-MCP-blue" alt="MCP"></a>
+            <a href="https://a2a-protocol.org"><img src="https://img.shields.io/badge/Protocol-A2A-green" alt="A2A"></a>
+            <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
+        </div>
+        <h1>Agent AI<br><span>從李飛飛80頁綜述到2026實戰指南</span></h1>
+        <p class="subtitle">基於 arXiv:2401.03568 Stanford HAI 綜述 + MCP / A2A 協議。<br>13頁可交互幻燈片、5篇精讀、逐字稿、SSML語音稿、Web-MCP可運行Demo，開箱即用。</p>
+        <div class="cta-row">
+            <a class="btn btn-primary" href="slides/cover.html">▶️ 開始看課件</a>
+            <a class="btn btn-secondary" href="https://github.com/sara-protocol/agent_ai_ppt_talk">⭐ GitHub Star</a>
+            <a class="btn btn-secondary" href="https://arxiv.org/abs/2401.03568">📄 論文原文</a>
+        </div>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <div class="num">01 / THEORY</div>
+            <h3>📖 整體論與五模組</h3>
+            <p>感知 Perception、推理 Reasoning、記憶 Memory、工具 Tool Use、行動 Action，Agent 的五臟六腑拆解</p>
+        </div>
+        <div class="card">
+            <div class="num">02 / CHALLENGE</div>
+            <h3>⚠️ 挑戰與幻覺治理</h3>
+            <p>幻覺 Hallucination、評估 Eval、安全對齊，為什麼 Agent 比 Chatbot 難10倍</p>
+        </div>
+        <div class="card">
+            <div class="num">03 / 2026 STACK</div>
+            <h3>🔌 MCP + A2A 技術棧</h3>
+            <p>MCP = USB-C接口 連接能力，A2A = 網線 連接智能體，三階段 RAG → MCP → A2A</p>
+        </div>
+        <div class="card">
+            <div class="num">04 / MEMORY</div>
+            <h3>🧠 記憶層：RAG ≠ Memory</h3>
+            <p>短期/長期/程序性記憶，為什麼 RAG 只是記憶的冰山一角</p>
+        </div>
+        <div class="card">
+            <div class="num">05 / USE CASE</div>
+            <h3>🎮 遊戲、機器人、醫療、企業</h3>
+            <p>4大應用場景真實案例，從遊戲NPC到手術機器人</p>
+        </div>
+        <div class="card">
+            <div class="num">DEMO / HANDS-ON</div>
+            <h3>💻 Web-MCP 可運行 Demo</h3>
+            <p>server.py + client.html + agent-card.json，符合 Linux Foundation A2A 標準，一鍵啟動</p>
+        </div>
+    </div>
+
+    <div class="slides-nav">
+        <h2>📑 13頁幻燈片導航</h2>
+        <div class="slide-list">
+            <a class="slide-link" href="slides/cover.html">00 Cover 封面</a>
+            <a class="slide-link" href="slides/agenda.html">01 Agenda 大綱</a>
+            <a class="slide-link" href="slides/definition.html">02 Definition 定義</a>
+            <a class="slide-link" href="slides/modules.html">03 Modules 五模組</a>
+            <a class="slide-link" href="slides/perception_reasoning.html">04 感知與推理</a>
+            <a class="slide-link" href="slides/memory.html">05 Memory 記憶</a>
+            <a class="slide-link" href="slides/mcp_intro.html">06 MCP 介紹</a>
+            <a class="slide-link" href="slides/mcp_demo.html">07 MCP Demo</a>
+            <a class="slide-link" href="slides/mcp_vs_a2a.html">08 MCP vs A2A</a>
+            <a class="slide-link" href="slides/a2a_intro.html">09 A2A 介紹</a>
+            <a class="slide-link" href="slides/eval.html">10 Eval 評估</a>
+            <a class="slide-link" href="slides/production.html">11 Production 生產級</a>
+            <a class="slide-link" href="slides/action_plan.html">12 Action Plan 行動計劃</a>
+        </div>
+    </div>
+
+    <footer>
+        MIT License © 2026 SARA Protocol · Built for teaching & open source<br>
+        <span style="opacity:0.6;">If this helps you, please give a ⭐ on GitHub</span>
+    </footer>
+</body>
+</html>
