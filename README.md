@@ -1,13 +1,15 @@
+# \[!\[Live Demo](https://img.shields.io/badge/Live%20Demo-10%2F39%20USDT-blue)](https://sara-protocol.github.io/agent\_ai\_ppt\_talk/) \[!\[GitHub Pages](https://img.shields.io/badge/Pages-Live-brightgreen)](https://sara-protocol.github.io/agent\_ai\_ppt\_talk/) \[!\[Stars](https://img.shields.io/github/stars/sara-protocol/agent\_ai\_ppt\_talk?style=social)](https://github.com/sara-protocol/agent\_ai\_ppt\_talk)
+
 # Agent AI: From Fei-Fei Li's 80-Page Survey to 2026 Stack
 
 > 一個可直接授課、開源可復現的 Agent AI 課件項目
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv%3A2401.03568-b31b1b.svg)](https://arxiv.org/abs/2401.03568)
-[![MCP](https://img.shields.io/badge/Protocol-MCP%20USB--C%20for%20LLM-blue)](https://modelcontextprotocol.io)
-[![A2A](https://img.shields.io/badge/Protocol-A2A%20Linux%20Foundation-green)](https://a2a-protocol.org)
-[![Slides](https://img.shields.io/badge/Slides-GitHub%20Pages-orange)](https://sara-protocol.github.io/agent_ai_ppt_talk/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#)
+[!\[Paper](https://img.shields.io/badge/Paper-arXiv%3A2401.03568-b31b1b.svg)](https://arxiv.org/abs/2401.03568)
+[!\[MCP](https://img.shields.io/badge/Protocol-MCP%20USB--C%20for%20LLM-blue)](https://modelcontextprotocol.io)
+[!\[A2A](https://img.shields.io/badge/Protocol-A2A%20Linux%20Foundation-green)](https://a2a-protocol.org)
+[!\[Slides](https://img.shields.io/badge/Slides-GitHub%20Pages-orange)](https://sara-protocol.github.io/agent_ai_ppt_talk/)
+[!\[License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[!\[PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#)
 
 **基於 Stanford HAI 李飛飛團隊 80頁綜述 `arXiv:2401.03568` + 2026 年 MCP / A2A 協議實戰整合版**
 
@@ -15,16 +17,16 @@
 
 ### 🎯 在線閱讀
 
-- **👉 在線看課件（GitHub Pages）：https://sara-protocol.github.io/agent_ai_ppt_talk/**
-- **📄 論文原文：https://arxiv.org/abs/2401.03568**
-- **💻 Demo：`web-mcp-demo/` 一鍵啟動**
+* **👉 在線看課件（GitHub Pages）：https://sara-protocol.github.io/agent\_ai\_ppt\_talk/**
+* **📄 論文原文：https://arxiv.org/abs/2401.03568**
+* **💻 Demo：`web-mcp-demo/` 一鍵啟動**
 
----
+\---
 
 ## 📦 目錄結構
 
 ```
-/agent_ai_ppt_talk/
+/agent\_ai\_ppt\_talk/
 ├── README.md                          # 本文件
 ├── LICENSE                            # MIT 授權
 ├── .gitignore                         # Git 忽略規則
@@ -42,15 +44,15 @@
 │   ├── agenda.html                    # 大綱
 │   ├── definition.html                # 定義
 │   ├── modules.html                   # 五模組
-│   ├── perception_reasoning.html
+│   ├── perception\_reasoning.html
 │   ├── memory.html
-│   ├── mcp_intro.html                 # MCP 介紹
-│   ├── mcp_demo.html
-│   ├── mcp_vs_a2a.html                # MCP vs A2A
-│   ├── a2a_intro.html
+│   ├── mcp\_intro.html                 # MCP 介紹
+│   ├── mcp\_demo.html
+│   ├── mcp\_vs\_a2a.html                # MCP vs A2A
+│   ├── a2a\_intro.html
 │   ├── eval.html
 │   ├── production.html
-│   └── action_plan.html
+│   └── action\_plan.html
 │
 ├── scripts/                           # 演講輔助
 │   ├── 逐字稿-繁體.md
@@ -63,24 +65,26 @@
     └── agent-card.json                # A2A Agent Card
 ```
 
----
+\---
 
 ## 🚀 快速開始
 
-### 1. 在線看課件
-直接打開：**https://sara-protocol.github.io/agent_ai_ppt_talk/**
+### 1\. 在線看課件
+
+直接打開：**https://sara-protocol.github.io/agent\_ai\_ppt\_talk/**
 
 本地預覽：
+
 ```bash
-git clone https://github.com/sara-protocol/agent_ai_ppt_talk.git
-cd agent_ai_ppt_talk
+git clone https://github.com/sara-protocol/agent\_ai\_ppt\_talk.git
+cd agent\_ai\_ppt\_talk
 python -m http.server 8000
 # 瀏覽器打開 http://localhost:8000/slides/cover.html
 ```
 
-### 2. Web-MCP Demo (2026版)
+### 2\. Web-MCP Demo (2026版)
 
-> 核心隱喻：**MCP = USB-C接口（連接能力），A2A = 網線（連接智能體）**
+> 核心隱喻：\*\*MCP = USB-C接口（連接能力），A2A = 網線（連接智能體）\*\*
 > 演進路徑：RAG 第一，MCP 第二，A2A 第三
 
 ```bash
@@ -97,22 +101,22 @@ python -m http.server 8000 --directory .
 # 打開 http://localhost:8000/client.html
 ```
 
-- MCP Server 暴露工具：透過 WebSocket 連接 LLM
-- Agent Card 註冊：`/.well-known/agent-card.json` 符合 A2A 協議
-- 前端：`client.html` 可視化調用鏈
+* MCP Server 暴露工具：透過 WebSocket 連接 LLM
+* Agent Card 註冊：`/.well-known/agent-card.json` 符合 A2A 協議
+* 前端：`client.html` 可視化調用鏈
 
----
+\---
 
 ## 🎤 如何演講
 
-| 場景 | 用什麼 |
-| :--- | :--- |
-| **課堂/分享會** | `slides/` 13頁 HTML，直接用瀏覽器全屏演講，內建逐字稿 |
-| **錄製視頻** | `scripts/講座視頻分鏡腳本.md` + `scripts/語音解讀稿-SSML.md` 餵 Azure TTS / ElevenLabs |
-| **技術培訓** | `docs/03-2026-Stack-MCP-A2A.md` + `web-mcp-demo/` 現場 Live Coding |
-| **論文研讀** | `docs/01-論文精讀-整體論與五模組.md` + 原文 `arXiv:2401.03568` |
+|場景|用什麼|
+|-|-|
+|**課堂/分享會**|`slides/` 13頁 HTML，直接用瀏覽器全屏演講，內建逐字稿|
+|**錄製視頻**|`scripts/講座視頻分鏡腳本.md` + `scripts/語音解讀稿-SSML.md` 餵 Azure TTS / ElevenLabs|
+|**技術培訓**|`docs/03-2026-Stack-MCP-A2A.md` + `web-mcp-demo/` 現場 Live Coding|
+|**論文研讀**|`docs/01-論文精讀-整體論與五模組.md` + 原文 `arXiv:2401.03568`|
 
----
+\---
 
 ## 📚 理論基礎
 
@@ -131,19 +135,19 @@ python -m http.server 8000 --directory .
 
 擴展至 2026 實戰：
 
-- **MCP (Model Context Protocol)** - Anthropic 發起，2024-11發佈，已成 LLM 工具標準 [modelcontextprotocol.io](https://modelcontextprotocol.io)
-- **A2A (Agent-to-Agent)** - Google 發起，捐贈給 Linux Foundation [a2a-protocol.org](https://a2a-protocol.org)
+* **MCP (Model Context Protocol)** - Anthropic 發起，2024-11發佈，已成 LLM 工具標準 [modelcontextprotocol.io](https://modelcontextprotocol.io)
+* **A2A (Agent-to-Agent)** - Google 發起，捐贈給 Linux Foundation [a2a-protocol.org](https://a2a-protocol.org)
 
----
+\---
 
 ## 🛠️ 技術棧
 
-- **幻燈片**：原生 HTML + Tailwind CSS + 響應式設計
-- **Demo**：Python MCP SDK + WebSocket + A2A Agent Card
-- **語音**：SSML 標準，兼容 Azure / AWS Polly / ElevenLabs
-- **部署**：GitHub Pages 零配置
+* **幻燈片**：原生 HTML + Tailwind CSS + 響應式設計
+* **Demo**：Python MCP SDK + WebSocket + A2A Agent Card
+* **語音**：SSML 標準，兼容 Azure / AWS Polly / ElevenLabs
+* **部署**：GitHub Pages 零配置
 
----
+\---
 
 ## 🤝 貢獻
 
@@ -156,7 +160,7 @@ PRs Welcome！
 
 問題請提 Issue，建議請提 Discussion。
 
----
+\---
 
 ## 📄 授權
 
@@ -164,12 +168,13 @@ PRs Welcome！
 
 > 本課件可自由用於教學、企業培訓、二次創作，保留原作者信息即可。
 
----
+\---
 
 ## 🙏 致謝
 
-- Stanford HAI & Fei-Fei Li 團隊的開創性綜述
-- Anthropic MCP & Google A2A 社區的開放協議
-- 所有 Star & Contributor
+* Stanford HAI \& Fei-Fei Li 團隊的開創性綜述
+* Anthropic MCP \& Google A2A 社區的開放協議
+* 所有 Star \& Contributor
 
 > 如果這個課件對你有幫助，請給個 ⭐ Star，這是對我們最大的支持！
+
