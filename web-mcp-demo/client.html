@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>Web-MCP Demo - Agent AI Guide</title>
+<style>
+body{font-family:system-ui;max-width:800px;margin:40px auto;padding:20px;background:#f6f6ff}
+.card{background:white;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+input{width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;margin:12px 0}
+button{background:#AF79FF;color:white;border:none;padding:12px 20px;border-radius:8px;cursor:pointer}
+pre{background:#f0f0ff;padding:16px;border-radius:8px;overflow:auto}
+.badge{display:inline-block;background:#e8f0fe;color:#1a73e8;padding:4px 10px;border-radius:12px;font-size:12px;margin:4px}
+</style>
+</head>
+<body>
+<h1>Agent AI Web-MCP Demo</h1>
+<p>基於 arXiv:2401.03568 + MCP 2026無狀態版</p>
+<div class="card">
+<span class="badge">MCP: USB-C 接工具</span>
+<span class="badge">A2A: 網線 接智能體</span>
+<h3>試試輸入：5_modules / mcp_vs_a2a / evolution</h3>
+<input id="q" placeholder="輸入查詢，例如：5_modules">
+<button onclick="callMCP()">呼叫 MCP Tool</button>
+<pre id="out">等待輸入...</pre>
+</div>
+<div class="card" style="margin-top:20px">
+<h3>Agent Card</h3>
+<pre id="card">載入中...</pre>
+</div>
+<script>
+async function loadCard(){
+  try{
+    const r = await fetch('/.well-known/agent-card.json');
+    document.getElementById('card').textContent = JSON.stringify(await r.json(), null, 2);
+  }catch(e){
+    document.getElementById('card').textContent = '本地演示模式 - 請啟動 server.py';
+  }
+}
+loadCard();
+function callMCP(){
+  const q = document.getElementById('q').value || '5_modules';
+  // 本地模擬，無需後端也能演示
+  const KNOWLEDGE = {
+    "5_modules": "感知 Environment & Perception, 認知 Cognition (LLM/VLM), 行動 Action, 記憶 Memory, 學習 Learning → 閉環 Perceive→Think→Act→Remember→Learn",
+    "mcp_vs_a2a": "MCP = USB-C，Agent ↔ 工具/數據，Host-Client-Server，JSON-RPC；A2A = 網線，Agent ↔ Agent，Peer-to-Peer，Agent Card發現，Task 8狀態",
+    "evolution": "Chatbot → LLM App → RAG → Tool Calling → AI Agent → MCP-powered Agent (2026)",
+    "challenges": "五大挑戰：幻覺、偏見、隱私、可解釋性、監管"
+  };
+  const result = KNOWLEDGE[q] || JSON.stringify(KNOWLEDGE, null, 2);
+  document.getElementById('out').textContent = `> MCP Tool: search_paper
+> Query: ${q}
+
+${result}
+
+[source: arXiv:2401.03568]`;
+}
+</script>
+</body>
+</html>

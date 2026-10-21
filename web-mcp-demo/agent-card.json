@@ -1,0 +1,23 @@
+{
+  "name": "Agent-Paper-Assistant",
+  "version": "1.0.0",
+  "description": "基於李飛飛80頁綜述的Agent知識助手 - 繁體中文版",
+  "capabilities": [
+    "search_paper",
+    "explain_modules",
+    "compare_mcp_a2a",
+    "get_5_challenges"
+  ],
+  "protocols": [
+    "mcp",
+    "a2a"
+  ],
+  "endpoint": "wss://localhost:8000/mcp",
+  "mcp_tools": [
+    "search_paper",
+    "qdrant_search",
+    "notion_search"
+  ],
+  "author": "Agent AI Guide",
+  "license": "MIT"
+}
